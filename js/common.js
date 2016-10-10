@@ -1,6 +1,6 @@
 var commonLi = {};
-/*
-*	Usage:ÑéÖ¤url
+/* 
+*	Usage:éªŒè¯url
 */
 commonLi.isURL = function(url){
 	var strRegex = "^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc (:s[0-9]{1-4})?/$";
@@ -13,7 +13,7 @@ commonLi.isURL = function(url){
 }
 
 /*
-*	Usage:¹Ø±Õµ±Ç°´°¿Ú ¼æÈÝ¶àä¯ÀÀÆ÷
+*	Usage:å…³é—­å½“å‰çª—å£ å…¼å®¹å¤šæµè§ˆå™¨
 */
 commonLi.closeWebPage = function(){
 	 if (navigator.userAgent.indexOf("MSIE") > 0) {
