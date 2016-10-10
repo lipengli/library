@@ -13,7 +13,7 @@ class alidayu
 	*	@option array 参数
 	*/
 	public static function smsSend($num,$option = []){
-		$option = array_merge(['extend'=>'123456','signName'=>'登录验证','param'=>'{"code":"1234","product":"千仞科技"}','templateCode'=>'SMS_2510481'],$option);//合并外置参数
+		$option = array_merge(['extend'=>'123456','signName'=>'登录验证','param'=>'{"code":"1234","product":"****科技"}','templateCode'=>'SMS_111111'],$option);//合并外置参数
 		$alidayuConfig = Load::load('alidayu');//引入配置文件
 		include __DIR__ .'/extenstion/alidayu/TopSdk.php';//加载阿里大鱼类
 		date_default_timezone_set('Asia/Shanghai'); //设置区域时间
