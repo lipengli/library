@@ -33,3 +33,11 @@ commonLi.closeWebPage = function(){
 		window.close();
 	 }
 }
+/*
+*	Usage:获取文件后缀
+*/
+commonLi.getSuffix = function(filename){
+	var _point = filename.lastIndexOf(".");   
+	var _length = filename.length;  
+	return filename.substring(_point,_length);//后缀名
+}

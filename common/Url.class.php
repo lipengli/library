@@ -73,6 +73,41 @@ class Url
 	}
 	
 	/**
+	*	Usage:			解析去除http://
+	*	@param string $url 需要解析的url
+	*	@param string $option 返回的前缀 默认：http://
+	*	@return $string 
+	*/
+	public function parseUrlHttp( $url , $pre = '' ){
+		if(empty( $url )){
+			return false;
+		}
+		$arrUrlParam = ['host'=>'','path'=>'','query'=>'','fragment'=>'','port'=>'','scheme'=>''];
+		$arrUrl = array_merge( $arrUrlParam , parse_url( $url ));
+
+		//是否有http(scheme)
+		if(!empty($arrUrl['scheme'])){
+			$pre = $arrUrl['scheme'].'://';
+		}else{
+			$pre = 'http://';
+		}
+		//是否有参数
+		if(!empty($arrUrl['query'])){
+			$query = '?'.$arrUrl['query'];
+		}else{
+			$query = '';
+		}
+		//是否有锚点fragment
+		if(!empty($arrUrl['fragment'])){
+			$fragment = '#'.$arrUrl['fragment'];
+		}else{
+			$fragment = '';
+		}
+		
+		return $pre.$arrUrl['host'].$arrUrl['port'].$arrUrl['path'].$query.$fragment;
+	}
+	
+	/**
 	*	Usage:			解析短参数
 	*	@param string $shortLabel 需要解析的短参数
 	*	@return string 
